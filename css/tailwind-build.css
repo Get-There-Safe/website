@@ -478,6 +478,10 @@ select option {
     height: 50px
 }
 
+.tw-h-\[65px\] {
+    height: 65px
+}
+
 .tw-h-\[60px\] {
     height: 60px
 }
@@ -549,6 +553,10 @@ select option {
 
 .tw-w-\[50px\] {
     width: 50px
+}
+
+.tw-w-\[65px\] {
+    width: 65px
 }
 
 .tw-w-\[80\%\] {
