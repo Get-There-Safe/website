@@ -1,177 +1,469 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GetThereSafe - Walk Together, Stay Safe</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #0077be;
-            --secondary-color: #00a86b;
-            --background-color: #f4f7f6;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: var(--background-color);
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        .hero {
-            background-color: white;
-            padding: 40px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        .tagline {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            margin: 20px 0;
-        }
-        .cta-button:hover {
-            background-color: #009468;
-        }
-        .description {
-            display: flex;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            align-items: center;
-            gap: 30px;
-        }
-        .description-text {
-            flex: 2;
-            text-align: left;
-        }
-        .description-icon {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .description-icon i {
-            font-size: 5rem;
-            color: var(--primary-color);
-        }
-        .description p {
-            margin-bottom: 15px;
-        }
-        .description strong {
-            color: var(--primary-color);
-        }
-        .launch-info {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .social-links {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .social-links a {
-            color: var(--primary-color);
-            font-size: 2rem;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-        .email-signup {
-            display: flex;
-            max-width: 400px;
-            margin: 20px auto;
-        }
-        .email-signup input {
-            flex-grow: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px 0 0 5px;
-        }
-        .email-signup button {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Sales</title>
+    <meta name="description" content="" />
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Title of the project" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/PaulleDemon" />
+    <!--Replace with the current website url-->
+    <meta property="og:image" content="https://get-there-safe.com" />
+
+    <link rel="stylesheet" href="../../tailwind-css/tailwind-runtime.css">
+    <link rel="stylesheet" href="./css/tailwind-build.css" />
+    <link rel="stylesheet" href="css/index.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <div class="container">
-        <div class="hero">
-            <h1>Get There Safe</h1>
-            <p class="tagline">Stay safe and connected with just a tap: walk home with a friend, even if you just met!</p>
-            <a href="https://get-there-safe.com" class="cta-button">Join Our Invite-Only Beta</a>
-        </div>
 
-        <div class="description">
-            <div class="description-text">
-                <p>Introducing <strong>GetThereSafe</strong>, an innovative app designed to foster safer journeys by connecting people to walk together.</p>
-                
-                <p>Whether it's a late-night stroll or navigating new neighborhoods, we pair users based on location and route, ensuring no one walks alone.</p>
-                
-                <p>Real-time tracking, in-app messaging, and route planning transform solo walks into shared, secure experiences.</p>
+<body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fff]">
+    <header class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 
+                    tw-px-[5%] max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around">
+        <a class="tw-h-[50px] tw-w-[50px] tw-p-[4px]" href="">
+            <img src="./assets/logo.png" alt="logo" class="tw-object tw-h-full tw-w-full" />
+        </a>
+        <div class="collapsible-header animated-collapse max-lg:tw-shadow-md" id="collapsed-header-items">
+            <div class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black 
+                            max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end 
+                            max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center">
+                <a class="header-links" href=""> About us </a>
+                <a class="header-links" href="#pricing"> Pricing </a>
+                <a class="header-links" href=""> Features </a>
+                <a class="header-links" href=""> Blog </a>
+                <a class="header-links" href=""> Contact us </a>
             </div>
-            <div class="description-icon">
-                <i class="fas fa-map-marker-alt"></i>
-            </div>
-        </div>
-
-        <div class="launch-info">
-            <h2>Get There Safe</h2>
-            <p>Find a walking Buddy, Anytime, Anywhere</p>
-            <p>Launching in Seattle, WA</p>
-            <p>Let us know what city you would like <strong>GetThereSafe</strong> to come to next!</p>
-            
-            <div class="email-signup">
-                <input type="email" placeholder="Enter your email" required>
-                <button>Notify Me</button>
+            <div class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base 
+                            max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center">
+                <a href="" aria-label="signup" class="tw-flex tw-h-[40px] tw-place-items-center tw-gap-2 tw-rounded-full
+                                tw-bg-black tw-p-1 tw-pl-4 tw-text-white">
+                    <span>Download</span>
+                    <div class="tw-flex tw-h-[30px] tw-w-[30px] tw-place-content-center 
+                                    tw-place-items-center tw-rounded-full tw-bg-primary 
+                                    tw-font-semibold tw-text-black">
+                        <i class="bi bi-download"></i>
+                    </div>
+                </a>
             </div>
         </div>
+        <button class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl 
+                        tw-text-black lg:tw-hidden" onclick="toggleHeader()" aria-label="menu"
+            id="collapse-btn"></button>
+    </header>
 
-        <div class="social-links">
-            <a href="https://get-there-safe.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://get-there-safe.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://get-there-safe.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://get-there-safe.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <section class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col 
+                    tw-overflow-hidden max-lg:tw-p-4 max-md:tw-mt-[50px]">
+        <div class="tw-flex tw-h-full tw-min-h-[100vh] tw-w-full tw-place-content-center 
+                        tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-flex-col">
+            <div class="tw-flex tw-flex-col tw-place-content-center">
+                <div class="tw-flex tw-flex-wrap tw-text-6xl tw-font-semibold tw-uppercase 
+                                tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug">
+                    <span class="reveal-hero-text">
+                        Get There Safe
+                    </span>
+                </div>
+                <div class="reveal-hero-text tw-mt-2 tw-max-w-[450px] tw-p-2 
+                                tw-text-justify max-lg:tw-max-w-full">
+                    
+                    <span class="tw-mb-1">
+                    Whether it's a late-night stroll or navigating new neighborhoods, we pair users based on location and route, ensuring no
+                    one walks alone.
+                    </span>
+                    
+                    </span>Real-time tracking, in-app messaging, and route planning transform solo walks into shared, secure experiences.</span>
+                </div>
+
+                <div class="reveal-hero-text tw-mt-4 tw-flex tw-place-items-center tw-gap-4 
+                                tw-overflow-hidden tw-p-2">
+                    <a class="tw-h-[50px] tw-max-w-[150px]" href="">
+                        <img src="./assets/images/brand-logos/app-store-badge.png" alt="app store"
+                            class="tw-h-full tw-w-full" srcset="" />
+                    </a>
+                    <a class="tw-h-[50px] tw-max-w-[150px]" href="">
+                        <img src="./assets/images/brand-logos/google-play-badge.png" alt="app store"
+                            class="tw-h-full tw-w-full" srcset="" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-w-full tw-max-w-[50%] tw-place-content-center tw-place-items-center 
+                            tw-overflow-hidden max-lg:tw-max-w-[unset]">
+                <div class="tw-relative tw-flex tw-max-h-[580px] tw-min-h-[450px] tw-min-w-[350px] 
+                            tw-max-w-[650px] tw-overflow-hidden max-lg:tw-h-fit max-lg:tw-max-h-[320px] 
+                            max-lg:tw-min-h-[180px] max-lg:tw-w-[320px] max-lg:tw-min-w-[320px]">
+                    <img src="./assets/images/home/iphone.png" alt="app"
+                        class="reveal-hero-img tw-z-[1] tw-h-full tw-w-full tw-object-contain" />
+
+                    <div class="tw-absolute tw-bottom-0 tw-left-1/2 tw-h-[80%] tw-w-[80%] 
+                                    tw--translate-x-1/2 tw-rounded-full tw-bg-secondary" id="hero-img-bg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section
+        class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+        id="numbers">
+        <div class="tw-flex tw-flex-col tw-place-items-center tw-gap-8">
+            <h3 class="tw-text-3xl">In numbers</h3>
+            <div class="tw-flex tw-w-full tw-place-content-center tw-gap-10 max-md:tw-flex-col" id="numbers-container">
+                <div>
+                    <span class="tw-text-6xl max-lg:tw-text-4xl">
+                        <span id="installs">390</span><span>k +</span>
+                    </span>
+                    <span class="tw-text-xl tw-font-medium tw-text-gray-800">
+                        /daily walking trips
+                    </span>
+                </div>
+                <div class="tw-text-6xl">
+                    <span class="tw-text-6xl max-lg:tw-text-4xl">
+                        <span id="hours">$300</span>
+                        <span>k +</span>
+                    </span>
+                    <span class="tw-text-xl tw-font-medium tw-text-gray-800">
+                        /daily uber expense
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden tw-p-6">
+        <div class="reveal-up tw-flex tw-min-h-[60vh] tw-place-content-center tw-place-items-center
+                        tw-gap-[10%] max-lg:tw-flex-col max-lg:tw-gap-10">
+            <div class="tw-flex">
+                <div class="tw-h-[450px] tw-w-[300px]">
+                    <img src="./assets/images/home/2.png" alt="product1"
+                        class="tw-h-full tw-w-full tw-object-contain" />
+                </div>
+            </div>
+            <div class="tw-mt-6 tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4">
+                <h3 class="tw-text-4xl tw-font-medium">Emphasis on Safety</h3>
+
+                <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                    <h4 class="tw-text-xl tw-font-medium">
+                        <i class="bi bi-check-all !tw-text-2xl"></i>
+                        Secure Match Verification
+                    </h4>
+                    <span class="tw-text-xl">
+                        Before confirming any walking match, users must complete a unique One-Time Password (OTP) verification process. This additional security layer ensures that each walking buddy is a real, authenticated individual before any connection is established.
+                    </span>
+                </div>
+                <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                    <h4 class="tw-text-xl tw-font-medium">
+                        <i class="bi bi-check-all !tw-text-2xl"></i>
+                        Verified Group Matching
+                    </h4>
+                    <span class="tw-text-xl">
+                        Our smart algorithm prioritizes group walks with 3-4 verified users. Group walks significantly reduce individual risk, creating a safer collective walking experience with built-in social accountability.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[2%]">
+    <h3 class="tw-text-3xl tw-font-medium tw-text-primary max-md:tw-text-2xl">
+        What our clients say
+    </h3>
+    <!-- Testimonials -->
+    <div class="tw-mt-8 tw-gap-10 tw-space-y-8 max-md:tw-columns-1 lg:tw-columns-2 xl:tw-columns-3">
+        <div
+            class="tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid tw-flex-col tw-rounded-lg tw-p-4 tw-shadow-lg max-lg:tw-w-[320px]">
+            <div class="tw-flex tw-place-items-center tw-gap-3">
+                <div
+                    class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary">
+                    <img src="./assets/images/people/women.jpg" class="tw-h-full tw-w-full tw-object-cover"
+                        alt="women" />
+                </div>
+                <div class="tw-flex tw-flex-col tw-gap-1">
+                    <div class="tw-font-semibold">Elena Rodriguez, 29</div>
+                    <div class="tw-text-[#4b4b4b]">Software Engineer, Seattle</div>
+                </div>
+            </div>
+            <p class="tw-mt-4 tw-italic tw-text-gray-600">
+                "As a woman who often works late shifts, walking alone at night has always been my biggest anxiety. GetThereSafe feels like a lifeline – knowing I can connect with someone heading the same direction makes me feel so much more secure."
+            </p>
+        </div>
+        <div
+            class="tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid tw-flex-col tw-rounded-lg tw-p-4 tw-shadow-lg max-lg:tw-w-[320px]">
+            <div class="tw-flex tw-place-items-center tw-gap-3">
+                <div
+                    class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary">
+                    <img src="./assets/images/people/man.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="man" />
+                </div>
+                <div class="tw-flex tw-flex-col tw-gap-1">
+                    <div class="tw-font-semibold">Marcus Thompson, 21</div>
+                    <div class="tw-text-[#4b4b4b]">University Student, Chicago</div>
+                </div>
+            </div>
+            <p class="tw-mt-4 tw-italic tw-text-gray-600">
+                "I'm a college student in a big city, and I've lost count of how many times I've felt uncomfortable walking back to my dorm after evening classes. This app could have prevented so many moments of pure fear and uncertainty."
+            </p>
+        </div>
+        <div
+            class="tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid tw-flex-col tw-rounded-lg tw-p-4 tw-shadow-lg max-lg:tw-w-[320px]">
+            <div class="tw-flex tw-place-items-center tw-gap-3">
+                <div
+                    class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary">
+                    <img src="./assets/images/people/man2.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="man" />
+                </div>
+                <div class="tw-flex tw-flex-col tw-gap-1">
+                    <div class="tw-font-semibold">David Chen, 48</div>
+                    <div class="tw-text-[#4b4b4b]">Small Business Owner, New York City</div>
+                </div>
+            </div>
+            <p class="tw-mt-4 tw-italic tw-text-gray-600">
+                "As a parent, I'm constantly worried about my daughter's safety when she's commuting. Knowing she has an app that can connect her with verified walking companions gives me so much relief. It's like having an extra layer of protection."
+            </p>
+        </div>
+        <div
+            class="tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid tw-flex-col tw-rounded-lg tw-p-4 tw-shadow-lg max-lg:tw-w-[320px]">
+            <div class="tw-flex tw-place-items-center tw-gap-3">
+                <div
+                    class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary">
+                    <img src="./assets/images/people/women.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="man" />
+                </div>
+                <div class="tw-flex tw-flex-col tw-gap-1">
+                    <div class="tw-font-semibold">Sarah Kim, 25</div>
+                    <div class="tw-text-[#4b4b4b]">Marketing Professional, San Francisco</div>
+                </div>
+            </div>
+            <p class="tw-mt-4 tw-italic tw-text-gray-600">
+                "Moving to a new city can be intimidating. Before GetThereSafe, I'd often take expensive rideshares just to feel safe. Now, I can walk and meet people who are heading the same way – it's a game-changer for my budget and my peace of mind."
+            </p>
+        </div>
+        <div
+            class="tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid tw-flex-col tw-rounded-lg tw-p-4 tw-shadow-lg max-lg:tw-w-[320px]">
+            <div class="tw-flex tw-place-items-center tw-gap-3">
+                <div
+                    class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary">
+                    <img src="./assets/images/people/man.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="man" />
+                </div>
+                <div class="tw-flex tw-flex-col tw-gap-1">
+                    <div class="tw-font-semibold">Jacob Williams, 26</div>
+                    <div class="tw-text-[#4b4b4b]">Freelance Journalist, Philadelphia</div>
+                </div>
+            </div>
+            <p class="tw-mt-4 tw-italic tw-text-gray-600">
+                "I've experienced uncomfortable situations walking alone, and after a scary encounter last year, I became terrified of walking anywhere at night. This app feels like it's designed by people who truly understand urban safety challenges."
+            </p>
+        </div>
+        <div
+            class="tw-flex tw-h-fit tw-w-[350px] tw-break-inside-avoid tw-flex-col tw-rounded-lg tw-p-4 tw-shadow-lg max-lg:tw-w-[320px]">
+            <div class="tw-flex tw-place-items-center tw-gap-3">
+                <div
+                    class="tw-h-[50px] tw-w-[50px] tw-overflow-hidden tw-rounded-full tw-border-[2px] tw-border-solid tw-border-primary">
+                    <img src="./assets/images/people/man2.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="man" />
+                </div>
+                <div class="tw-flex tw-flex-col tw-gap-1">
+                    <div class="tw-font-semibold">Rohan Patel</div>
+                    <div class="tw-text-[#4b4b4b]">
+                        Graphic Designer, Boston
+                    </div>
+                </div>
+            </div>
+            <p class="tw-mt-4 tw-italic tw-text-gray-600">
+                "Living with anxiety makes urban walking challenging. GetThereSafe isn't just an app for me – it's a tool that helps me reclaim my independence and feel confident moving through the city."
+            </p>
         </div>
     </div>
+</section>
+
+    <section class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[2%]">
+        <h3 class="reveal-up tw-text-4xl tw-font-medium max-md:tw-text-2xl">
+            Read our articles for more insights
+        </h3>
+        <!-- pricing -->
+        <div class="reveal-up tw-mt-10 tw-flex tw-flex-wrap tw-place-content-center tw-gap-10 max-lg:tw-flex-col">
+            <a href="" class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-overflow-clip 
+                            tw-rounded-lg tw-bg-[#edecec79] tw-p-4 tw-shadow-xl max-lg:tw-w-[300px]">
+                <div class="tw-h-[200px] tw-w-full tw-overflow-hidden tw-rounded-md">
+                    <img src="./assets/images/home/sample.jpg" alt="article image"
+                        class="tw-h-full tw-w-full tw-object-cover" srcset="" />
+                </div>
+                <h3 class="tw-text-2xl tw-font-semibold max-md:tw-text-xl">
+                    Walking Towards a Safer Urban Future
+                </h3>
+                <p class="tw-mt-2 tw-text-gray-600">
+                    Modern urban planning is increasingly recognizing that safety isn't just about physical infrastructure...
+                </p>
+                <span>
+                    <span>Learn more</span>
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+            </a>
+            <a href="" class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-overflow-clip 
+                            tw-rounded-lg tw-bg-[#edecec79] tw-p-4 tw-shadow-xl max-lg:tw-w-[300px]">
+                <div class="tw-h-[200px] tw-w-full tw-overflow-hidden tw-rounded-md">
+                    <img src="./assets/images/home/sample.jpg" alt="article image"
+                        class="tw-h-full tw-w-full tw-object-cover" srcset="" />
+                </div>
+                <h3 class="tw-text-2xl tw-font-semibold max-md:tw-text-xl">
+                    When Transportation Breaks the Bank
+                </h3>
+                <p class="tw-mt-2 tw-text-gray-600">
+                    The average urban dweller spends approximately 20-30% of their income on transportation...
+                </p>
+                <span>
+                    <span>Learn more</span>
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+            </a>
+            <a href="" class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-overflow-clip 
+                            tw-rounded-lg tw-bg-[#edecec79] tw-p-4 tw-shadow-xl max-lg:tw-w-[300px]">
+                <div class="tw-h-[200px] tw-w-full tw-overflow-hidden tw-rounded-md">
+                    <img src="./assets/images/home/sample.jpg" alt="article image"
+                        class="tw-h-full tw-w-full tw-object-cover" srcset="" />
+                </div>
+                <h3 class="tw-text-2xl tw-font-semibold max-md:tw-text-xl">
+                    Building Urban Communities: Beyond Physical Proximity
+                </h3>
+                <p class="tw-mt-2 tw-text-gray-600">
+                    In an era of increasing digital isolation, urban communities are seeking new models of connection that transcend traditional boundaries...
+                </p>
+                <span>
+                    <span>Learn more</span>
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <section class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] 
+                    tw-p-[5%] tw-px-[10%]">
+        <div class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-3">
+            <h2 class="tw-text-xl max-md:tw-text-lg">
+                Keep yourself updated
+            </h2>
+
+            <div class="tw-flex tw-h-[60px] tw-place-items-center tw-gap-2 tw-overflow-hidden tw-p-2">
+                <input type="email" class="input tw-h-full tw-w-full tw-p-2 tw-outline-none" placeholder="email" />
+                <a class="btn tw-transition-colors tw-duration-[0.3s]" href="">
+                    Signup
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] 
+                    tw-text-black max-md:tw-flex-col">
+        <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 
+                        max-md:tw-w-full">
+            <img src="./assets/logo.png" alt="logo" srcset="" class="tw-max-w-[120px]" />
+            <div>
+                1423 25th Ave,
+                <br />
+                San Francisco
+                <br />
+                United States
+            </div>
+            <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow us</div>
+            <div class="tw-flex tw-gap-4 tw-text-2xl">
+                <a href="" aria-label="Facebook">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://twitter.com/@pauls_freeman" aria-label="Twitter">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="https://instagram.com/" class="tw-h-[40px] tw-w-[40px]" aria-label="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+            <h2 class="tw-text-3xl max-md:tw-text-xl">Company</h2>
+            <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                <a href="#" class="footer-link">Pricing</a>
+                <a href="#" class="footer-link">FAQ</a>
+                <a href="#" class="footer-link">Contact Us</a>
+            </div>
+        </div>
+
+        <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+            <h2 class="tw-text-3xl max-md:tw-text-xl">Resources</h2>
+            <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                <a href="#" class="footer-link">About us</a>
+                <a href="#" class="footer-link">FAQ</a>
+                <a href="#" class="footer-link">Contact Us</a>
+                <a href="#" class="footer-link">Blogs</a>
+                <a href="#" class="footer-link">Privacy policy</a>
+            </div>
+        </div>
+    </footer>
 </body>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
+    integrity="sha512-B1lby8cGcAUU3GR+Fd809/ZxgHbfwJMp0jLTVfHiArTuUt++VqSlJpaJvhNtRf3NERaxDNmmxkdx2o+aHd4bvw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"
+    integrity="sha512-AY2+JxnBETJ0wcXnLPCcZJIJx0eimyhz3OJ55k2Jx4RtYC+XdIi2VtJQ+tP3BaTst4otlGG1TtPJ9fKrAUnRdQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="./index.js"></script>
+
+<style>
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        text-align: center;
+        /* font-size: 12px; */
+        opacity: 1;
+        background: #f7f7f7fa;
+        left: auto;
+    }
+
+    .swiper-pagination-bullet:hover {
+        color: #000;
+        opacity: 1;
+        background: #ede0e0bd;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #f39696 !important;
+    }
+
+    .swiper {
+        padding: 10px !important;
+    }
+</style>
+
+<script>
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        centeredSlides: true,
+
+        // If we need pagination
+        pagination: {
+            el: '.pagination-container',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return `<span class="${className}"></span>`
+            },
+        },
+        // Navigation arrows
+        navigation: {
+            nextEl: '.testmonial-next',
+            prevEl: '.testmonial-prev',
+        },
+    })
+</script>
+
 </html>
