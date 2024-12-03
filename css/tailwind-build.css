@@ -711,6 +711,11 @@ select option {
     border-radius: .375rem
 }
 
+.tw-border-2,
+.tw-border-\[2px\] {
+    border-width: 2px
+}
+
 .tw-rounded-xl {
     border-radius: .75rem
 }
@@ -721,6 +726,11 @@ select option {
 
 .tw-border-solid {
     border-style: solid
+}
+
+.tw-border-primary {
+    --tw-border-opacity: 1;
+    border-color: rgb(21 94 239/var(--tw-border-opacity))
 }
 
 .tw-border-gray-300 {
@@ -924,6 +934,11 @@ select option {
     color: rgb(75 85 99/var(--tw-text-opacity))
 }
 
+.tw-text-primary {
+    --tw-text-opacity: 1;
+    color: rgb(21 94 239/var(--tw-text-opacity))
+}
+
 .tw-text-orange-500 {
     --tw-text-opacity: 1;
     color: rgb(249 115 22/var(--tw-text-opacity))
@@ -1078,6 +1093,11 @@ select option {
         max-width: 100vw
     }
 
+    .max-md\:tw-columns-1 {
+        -moz-columns: 1;
+        column-count: 1
+    }
+
     .max-md\:tw-flex-col {
         flex-direction: column
     }
@@ -1125,11 +1145,23 @@ select option {
         display: none
     }
 
+    .lg\:tw-columns-2 {
+        -moz-columns: 2;
+        column-count: 2
+    }
+
     .lg\:tw-place-items-center {
         place-items: center
     }
 
     .lg\:tw-justify-around {
         justify-content: space-around
+    }
+}
+
+@media (min-width:1280px) {
+    .xl\:tw-columns-3 {
+        -moz-columns: 3;
+        column-count: 3
     }
 }
